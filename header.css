@@ -3,15 +3,18 @@
 :root {
   --mw: 1440px;
   --gap1: 40px;
-  --gap2: 16px;
+  --gap2: 20px;
   --main_c1: #333333;
   --main_c2: #f8f8f8;
   --sub-c1: #aaaaaa;
   --point_c1: #1b5ec7;
   --point_c2: #f4bb5f;
+  --size_L: 28px;
+  --size_S: 14px;
 }
 body {
   font-family: "Noto Sans KR", sans-serif;
+  color: var(--main_c1);
 }
 
 /* pc 버전 */
@@ -44,6 +47,7 @@ body {
 .main_menu a {
   padding: var(--gap2) 0;
   padding-right: var(--gap1);
+  font-size: 18px;
   font-weight: bold;
   position: relative;
 }
@@ -69,7 +73,6 @@ body {
 .fun a {
   display: flex;
   padding-left: var(--gap1);
-  font-size: 0.75rem;
   position: relative;
 }
 .fun:hover a {
@@ -160,7 +163,7 @@ body {
 }
 .sec1 {
   background-image: url(./img/sec1_bg.png);
-  height: 640px;
+  height: 600px;
   padding-top: calc(80px + var(--gap1));
 }
 .icon_mention {
@@ -168,7 +171,7 @@ body {
   margin: auto;
   display: flex;
   justify-content: center;
-  font-size: 1.75rem;
+  font-size: var(--size_L);
   color: var(--main_c1);
 }
 .icon_mention i {
@@ -200,10 +203,123 @@ body {
   color: var(--point_c1);
 }
 .sub {
-  font-size: 1.5rem;
+  font-size: 16px;
+}
+
+/* 담화마켓 */
+.sec_market {
+}
+.sec2 {
+  max-width: var(--mw);
+  margin: auto;
+  position: relative;
+}
+.btn_market {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid var(--main_c1);
+  padding: 10px 12px;
+  transition: 0.5s;
+}
+.btn_market:hover {
+  background-color: var(--point_c2);
+  border: transparent;
+}
+.btn_market:hover a {
+  color: white;
+}
+.title_market {
+  text-align: center;
+  padding-bottom: var(--gap2);
+  line-height: var(--gap1);
+}
+.title_market h2 {
+  font-size: var(--size_L);
+  font-weight: 500;
+}
+.title_market span {
+  color: var(--point_c1);
+}
+.prd {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-auto-rows: 420px;
+  gap: var(--gap2);
+  position: relative;
+}
+.prd1,
+.prd2,
+.prd3,
+.prd4 {
+  position: relative;
+}
+.prd1 {
+  background-image: url(/img/탁주.jpg);
+  background-size: cover;
+}
+.prd1:before,
+.prd2:before,
+.prd3:before,
+.prd4:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: var(--main_c1);
+  opacity: 0.6;
+  transition: 0.5s;
+}
+.prd1:hover::before,
+.prd2:hover::before,
+.prd3:hover::before,
+.prd4:hover::before {
+  width: 100%;
+}
+.prd2 {
+  background-image: url(/img/청주.jpg);
+  background-size: cover;
+}
+.prd3 {
+  background-image: url(/img/과실주.jpg);
+  background-size: cover;
+}
+.prd4 {
+  background-image: url(/img/증류주.jpg);
+  background-size: cover;
+}
+.prd1_text,
+.prd2_text,
+.prd3_text,
+.prd4_text {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translatex(-50%);
+  color: white;
+  font-weight: 500;
+  transition: 0.5s;
+  opacity: 0;
+}
+.prd1:hover .prd1_text,
+.prd2:hover .prd2_text,
+.prd3:hover .prd3_text,
+.prd4:hover .prd4_text {
+  opacity: 1;
+}
+.prd1_text p:nth-child(2),
+.prd2_text p:nth-child(2),
+.prd3_text p:nth-child(2),
+.prd4_text p:nth-child(2) {
+  font-size: var(--size_S);
+  padding-top: 10px;
+  font-weight: 400;
 }
 /* mobile 버전*/
-@media (max-width: 740px) {
+@media (max-width: 750px) {
   .gnb {
     display: none;
   }
@@ -230,6 +346,12 @@ body {
     text-align: center;
     padding: 0 var(--gap2);
   }
+  .sec1 {
+    height: 1100px;
+    background-image: url(./img/sec1_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   .icon_mention {
     max-width: var(--mw);
     margin: auto;
@@ -239,5 +361,16 @@ body {
   .icon {
     width: 100%;
     padding-bottom: calc(40px + var(--gap1));
+  }
+  .sec_market {
+    border: 1px solid red;
+    padding: 0 var(--gap2);
+  }
+  .title_market {
+    text-align: left;
+  }
+  .title_market p {
+    border: 1px solid blue;
+    line-height: 2rem;
   }
 }
