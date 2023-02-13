@@ -1,0 +1,243 @@
+@charset 'utf-8';
+
+:root {
+  --mw: 1440px;
+  --gap1: 40px;
+  --gap2: 16px;
+  --main_c1: #333333;
+  --main_c2: #f8f8f8;
+  --sub-c1: #aaaaaa;
+  --point_c1: #1b5ec7;
+  --point_c2: #f4bb5f;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* pc 버전 */
+
+/* header */
+.hd {
+  max-width: var(--mw);
+  padding: var(--gap1) 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  padding-right: var(--gap1);
+}
+.logo i {
+  font-size: 2rem;
+  color: var(--main_c1);
+  display: none;
+}
+.gnb {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gnb a {
+  color: var(--main_c1);
+}
+.main_menu a {
+  padding: var(--gap2) 0;
+  padding-right: var(--gap1);
+  font-weight: bold;
+  position: relative;
+}
+.main_menu a:hover {
+  color: var(--point_c1);
+}
+.main_menu a::before {
+  content: "";
+  width: calc(100% - var(--gap1));
+  height: 3px;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  transition: 0.5s;
+  background-color: var(--point_c1);
+}
+.main_menu a:hover::before {
+  opacity: 1;
+}
+.fun {
+  display: flex;
+}
+.fun a {
+  display: flex;
+  padding-left: var(--gap1);
+  font-size: 0.75rem;
+  position: relative;
+}
+.fun:hover a {
+  text-decoration: underline;
+}
+.fun a:nth-child(1)::after,
+.fun a:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + var(--gap1) / 2);
+  transform: translate(0, -50%);
+  width: 0.7px;
+  height: 100%;
+  background-color: var(--sub-c1);
+}
+.fun i {
+  padding-left: 0.3rem;
+}
+
+/*메인배너*/
+.main_banner {
+  width: 100%;
+  height: 640px;
+  background-image: url("/img/메인배너img.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+.text_box {
+  max-width: var(--mw);
+  margin: auto;
+  height: 100%;
+  position: relative;
+}
+.title {
+  position: absolute;
+  top: 25%;
+}
+.title p {
+  font-size: 60px;
+  font-weight: 100;
+}
+.title span {
+  font-weight: 500;
+}
+.sub_title {
+  font-weight: 100;
+  position: absolute;
+  bottom: 25%;
+  line-height: 2rem;
+}
+
+/*구독 section*/
+.btn {
+  position: relative;
+}
+.btn_go {
+  border: transparent;
+  border-radius: 10px;
+  background-color: var(--point_c2);
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 80px;
+}
+.btn_go a {
+  color: #ffffff;
+}
+.btn_go i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.5s;
+}
+.btn_go:hover i {
+  opacity: 1;
+}
+.btn_go:hover a {
+  display: none;
+}
+.sec1 {
+  background-image: url(./img/sec1_bg.png);
+  height: 640px;
+  padding-top: calc(80px + var(--gap1));
+}
+.icon_mention {
+  max-width: var(--mw);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: var(--main_c1);
+}
+.icon_mention i {
+  padding-bottom: var(--gap2);
+  font-size: 40px;
+}
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 350px;
+  padding: 0 var(--gap2);
+}
+.text1 {
+  font-weight: 500;
+  padding-bottom: var(--gap2);
+}
+.heart span {
+  color: var(--point_c2);
+}
+.pause span {
+  color: var(--point_c1);
+}
+.deli span {
+  color: var(--point_c2);
+}
+.hint span {
+  color: var(--point_c1);
+}
+.sub {
+  font-size: 1.5rem;
+}
+/* mobile 버전*/
+@media (max-width: 740px) {
+  .gnb {
+    display: none;
+  }
+  .hd {
+    justify-content: center;
+  }
+  .logo {
+    width: 100%;
+    padding: 0 var(--gap1);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .logo i {
+    display: block;
+  }
+  .logo i:hover {
+    color: var(--point_c1);
+  }
+
+  .text_box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0 var(--gap2);
+  }
+  .icon_mention {
+    max-width: var(--mw);
+    margin: auto;
+    display: block;
+    justify-content: center;
+  }
+  .icon {
+    width: 100%;
+    padding-bottom: calc(40px + var(--gap1));
+  }
+}
