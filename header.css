@@ -75,7 +75,7 @@ body {
   padding-left: var(--gap1);
   position: relative;
 }
-.fun:hover a {
+.fun a:hover {
   text-decoration: underline;
 }
 .fun a:nth-child(1)::after,
@@ -163,7 +163,8 @@ body {
 }
 .sec1 {
   background-image: url(./img/sec1_bg.png);
-  height: 600px;
+  background-repeat: no-repeat;
+  height: 50vh;
   padding-top: calc(80px + var(--gap1));
 }
 .icon_mention {
@@ -207,8 +208,6 @@ body {
 }
 
 /* 담화마켓 */
-.sec_market {
-}
 .sec2 {
   max-width: var(--mw);
   margin: auto;
@@ -221,6 +220,9 @@ body {
   border: 1px solid var(--main_c1);
   padding: 10px 12px;
   transition: 0.5s;
+}
+.btn_market a {
+  color: var(--main_c1);
 }
 .btn_market:hover {
   background-color: var(--point_c2);
@@ -243,7 +245,7 @@ body {
 }
 .prd {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 420px;
   gap: var(--gap2);
   position: relative;
@@ -318,6 +320,121 @@ body {
   padding-top: 10px;
   font-weight: 400;
 }
+
+/* 담화리뷰 */
+.sec_review {
+  padding-top: 20vh;
+  position: relative;
+}
+.reviewTitle {
+  max-width: var(--mw);
+  margin: auto;
+}
+.swiper-wrapper {
+  padding-top: var(--gap1);
+  padding-bottom: calc(3 * var(--gap1));
+  background-color: var(--main_c2);
+}
+.swiper-slide img {
+  width: 100%;
+}
+.btn_review {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translatex(-50%);
+  background-color: white;
+  border: 1px solid var(--main_c1);
+  padding: 10px 12px;
+  transition: 0.5s;
+  z-index: 100;
+}
+.btn_review a {
+  color: var(--main_c1);
+}
+.btn_review:hover {
+  background-color: var(--point_c2);
+  border: transparent;
+}
+.btn_review:hover a {
+  color: white;
+}
+.reviewTitle {
+  padding-bottom: var(--gap2);
+  line-height: var(--gap1);
+}
+.reviewTitle h2 {
+  font-size: var(--size_L);
+  font-weight: 500;
+}
+.reviewTitle span {
+  color: var(--point_c1);
+}
+.swiper-slide i,
+p {
+  font-size: var(--size_S);
+}
+.swiper-slide i {
+  color: var(--point_c2);
+}
+.swiper-slide span {
+  color: var(--sub-c1);
+}
+
+/* footer */
+.footer {
+  display: flex;
+  padding: calc(2 * var(--gap1)) calc(2 * var(--gap1));
+}
+.footer p {
+  font-size: var(--size_S);
+}
+.logoimg {
+  display: block;
+  width: 7rem;
+  height: 4rem;
+  background-image: url(./img/술담화로고.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.footerWrapper {
+  width: 100%;
+  padding-left: var(--gap1);
+}
+.ft1 {
+  display: flex;
+  justify-content: space-between;
+}
+.iconSNS a {
+  border: 1px solid var(--main_c2);
+  border-radius: 50%;
+  background-color: var(--main_c2);
+  font-size: 1.5rem;
+  color: var(--main_c1);
+  padding: 0 1rem;
+}
+.ft2 {
+  display: flex;
+  padding-bottom: var(--gap1);
+}
+.info1 {
+  padding-right: var(--gap1);
+}
+.ft3 {
+  display: flex;
+  justify-content: space-between;
+}
+.infoL,
+.infoR {
+  display: flex;
+  color: var(--sub-c1);
+}
+.infoL p {
+  padding-right: var(--gap2);
+}
+.infoR p {
+  padding-left: var(--gap2);
+}
 /* mobile 버전*/
 @media (max-width: 750px) {
   .gnb {
@@ -363,14 +480,42 @@ body {
     padding-bottom: calc(40px + var(--gap1));
   }
   .sec_market {
-    border: 1px solid red;
     padding: 0 var(--gap2);
   }
   .title_market {
     text-align: left;
   }
   .title_market p {
-    border: 1px solid blue;
     line-height: 2rem;
+  }
+  .prd {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+    gap: var(--gap2);
+  }
+  .prd1 {
+    grid-column: span 2;
+  }
+  .prd2 {
+    grid-row: span 3;
+  }
+  .prd3 {
+    grid-row: span 2;
+  }
+  .sec2 {
+    max-width: var(--mw);
+    margin: auto;
+    position: relative;
+    padding-bottom: calc(var(--gap2) + var(--gap1));
+  }
+  .btn_market {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    border: 1px solid var(--main_c1);
+    padding: 10px 12px;
+    transition: 0.5s;
   }
 }
