@@ -164,8 +164,9 @@ body {
 .sec1 {
   background-image: url(./img/sec1_bg.png);
   background-repeat: no-repeat;
-  height: 50vh;
+  background-size: cover;
   padding-top: calc(80px + var(--gap1));
+  padding-bottom: 20vh;
 }
 .icon_mention {
   max-width: var(--mw);
@@ -246,7 +247,7 @@ body {
 .prd {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 420px;
+  grid-auto-rows: 30rem;
   gap: var(--gap2);
   position: relative;
 }
@@ -331,9 +332,9 @@ body {
   margin: auto;
 }
 .swiper-wrapper {
+  padding: 0 var(--gap1);
   padding-top: var(--gap1);
   padding-bottom: calc(3 * var(--gap1));
-  background-color: var(--main_c2);
 }
 .swiper-slide img {
   width: 100%;
@@ -369,6 +370,9 @@ body {
 }
 .reviewTitle span {
   color: var(--point_c1);
+}
+.swiper-horizontal {
+  background-color: var(--main_c2);
 }
 .swiper-slide i,
 p {
@@ -517,5 +521,74 @@ p {
     border: 1px solid var(--main_c1);
     padding: 10px 12px;
     transition: 0.5s;
+  }
+  .footer {
+    display: block;
+    padding: var(--gap1) var(--gap2);
+    position: relative;
+  }
+  .footer p {
+    font-size: var(--size_S);
+  }
+  .logoimg {
+    position: absolute;
+    width: 7rem;
+    height: 4rem;
+    background-image: url(./img/술담화로고.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .footerWrapper {
+    padding: 0;
+    width: 100%;
+    position: relative;
+  }
+  .ft1 {
+    display: block;
+    text-align: end;
+  }
+  .iconSNS {
+    width: 35%;
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+  }
+  .iconSNS a {
+    border: 1px solid var(--main_c2);
+    border-radius: 50%;
+    background-color: var(--main_c2);
+    font-size: 1.5rem;
+    line-height: 3rem;
+    color: var(--main_c1);
+  }
+  .ft2 {
+    display: block;
+    padding: 0;
+  }
+  .info1 {
+    text-align: end;
+    padding: var(--gap2) 0;
+  }
+  .info2 {
+    padding-bottom: var(--gap2);
+  }
+  .ft3 {
+    display: block;
+    padding: 0;
+  }
+  .infoL {
+    display: block;
+  }
+  .infoL,
+  .infoR {
+    color: var(--sub-c1);
+  }
+  .infoR {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--gap1);
+  }
+  .infoR p {
+    padding: 0;
   }
 }

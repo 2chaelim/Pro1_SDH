@@ -1,0 +1,285 @@
+@charset 'utf-8';
+
+:root {
+  --mw: 1440px;
+  --gap1: 40px;
+  --gap2: 20px;
+  --main_c1: #333333;
+  --main_c2: #f8f8f8;
+  --sub-c1: #aaaaaa;
+  --point_c1: #1b5ec7;
+  --point_c2: #f4bb5f;
+  --size_L: 28px;
+  --size_M: 18px;
+  --size_S: 14px;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: var(--main_c1);
+}
+
+/* pc버전 */
+
+/* header */
+.hd {
+  max-width: var(--mw);
+  padding: var(--gap1) 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  padding-right: var(--gap1);
+}
+.logo i {
+  font-size: 2rem;
+  color: var(--main_c1);
+  display: none;
+}
+.gnb {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gnb a {
+  color: var(--main_c1);
+}
+.main_menu a {
+  padding: var(--gap2) 0;
+  padding-right: var(--gap1);
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+.main_menu a:hover {
+  color: var(--point_c1);
+}
+.main_menu a::before {
+  content: "";
+  width: calc(100% - var(--gap1));
+  height: 3px;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  transition: 0.5s;
+  background-color: var(--point_c1);
+}
+.main_menu a:hover::before {
+  opacity: 1;
+}
+.fun {
+  display: flex;
+}
+.fun a {
+  display: flex;
+  padding-left: var(--gap1);
+  position: relative;
+}
+.fun a:hover {
+  text-decoration: underline;
+}
+.fun a:nth-child(1)::after,
+.fun a:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + var(--gap1) / 2);
+  transform: translate(0, -50%);
+  width: 0.7px;
+  height: 100%;
+  background-color: var(--sub-c1);
+}
+.fun i {
+  padding-left: 0.3rem;
+}
+
+/* sec1 */
+.sec1 {
+  padding: var(--gap1) 0;
+  background-color: var(--main_c2);
+}
+.sec1Wrapper {
+  max-width: var(--mw);
+  margin: auto;
+  display: flex;
+}
+.thum {
+  padding-right: var(--gap1);
+  width: 50%;
+  display: grid;
+  gap: var(--gap2);
+  grid-template-columns: repeat(3, 1fr);
+}
+.thum > div {
+  width: 100%;
+  height: 10vh;
+  background-size: cover;
+}
+.thumImg1 {
+  background-image: url(./img/썸3.png);
+}
+.thumImg2 {
+  background-image: url(./img/썸.png);
+  grid-column: 2/4;
+}
+.thumImg3 {
+  background-image: url(./img/썸2.png);
+}
+.option {
+  position: relative;
+  width: 50%;
+}
+.optionTitle {
+  line-height: 1.5rem;
+}
+.optionTitle p:nth-child(1) {
+  font-size: var(--size_S);
+}
+.optionTitle p:nth-child(2) {
+  font-size: var(--size_M);
+  font-weight: 500;
+}
+.select {
+  padding: var(--gap1) 0;
+  display: flex;
+  justify-content: space-between;
+}
+.optSelect {
+  line-height: var(--gap1);
+}
+.optBox {
+  border: 1px solid var(--main_c1);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  margin-right: var(--gap2);
+}
+.optBox:hover {
+  font-weight: bold;
+}
+.optCount {
+  line-height: var(--gap1);
+}
+.countBox {
+  border: 1px solid var(--main_c1);
+}
+.countBox button {
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0.9rem 2rem;
+}
+.minus:hover,
+.plus:hover {
+  font-weight: bold;
+}
+.divLine {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--sub-c1);
+}
+.payment {
+  display: flex;
+  justify-content: end;
+  font-size: var(--size_M);
+  font-weight: 500;
+  padding-top: var(--gap2);
+  padding-bottom: var(--gap1);
+}
+.payment p:nth-child(2) {
+  color: var(--point_c1);
+  padding-left: var(--gap1);
+}
+.shop {
+  display: flex;
+  justify-content: end;
+}
+.shop button {
+  border: 1px solid var(--main_c1);
+  background-color: transparent;
+  padding: 1rem;
+  cursor: pointer;
+}
+.shop .pur {
+  flex-grow: 1;
+  margin-right: var(--gap2);
+  background-color: var(--point_c1);
+  color: white;
+  font-weight: 500;
+}
+.pur:hover {
+  font-weight: bold;
+}
+.gift {
+  margin-left: var(--gap2);
+}
+.cart,
+.gift {
+  font-size: 18px;
+}
+
+/* 모바일버전 */
+@media (max-width: 750px) {
+  .gnb {
+    display: none;
+  }
+  .hd {
+    justify-content: center;
+  }
+  .logo {
+    width: 100%;
+    padding: 0 var(--gap1);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .logo i {
+    display: block;
+  }
+  .logo i:hover {
+    color: var(--point_c1);
+  }
+  /**/
+  .sec1Wrapper {
+    padding: 0 var(--gap2);
+    display: block;
+  }
+  .thum {
+    padding: 0;
+    width: 100%;
+    display: block;
+  }
+  .thum > div {
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+  }
+  .thumImg1 {
+    background-image: url(./img/썸3.png);
+  }
+  .thumImg2, .thumImg3 {
+   display: none;
+  }
+  .option {
+    width: 100%;
+  }
+  .optionTitle {
+    padding-top: 1rem;
+  }
+  .select {
+    padding: 1rem 0;
+    display: block;
+  }
+  .optSelect {
+    padding-bottom: var(--gap1);
+  }
+  .optCount{
+    width: 10rem;
+  }
+  .countBox{
+    display: flex;
+    justify-content: space-between;
+  }
