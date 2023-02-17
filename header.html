@@ -14,24 +14,23 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="header.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- font-family: 'Noto Sans KR', sans-serif; -->
   </head>
   <body>
-    <header class="hd">
-      <a href="./header.html" class="logo"
-        ><i class="fa-sharp fa-solid fa-bars"></i
-        ><img src="/img/술담화로고.png" alt="" /><i
-          class="fa-solid fa-magnifying-glass"
-        ></i
-      ></a>
-      <nav class="gnb">
+    <header class="hd mw">
+      <div class="top_logoSet">
+        <i class="fa-sharp fa-solid fa-bars bar1"></i
+          >
+        <a href="./header.html" class="logo"
+          ><img src="/img/술담화로고.png" alt="" />
+        </a>
+        <i
+            class="fa-solid fa-magnifying-glass glass1"
+          ></i>
+      </div>
+      <nav class="gnb on">
         <div class="main_menu">
           <a href="./header.html">담화소개</a>
           <a href="./구독page.html">담화구독</a>
@@ -45,7 +44,7 @@
       </nav>
     </header>
     <section class="main_banner">
-      <div class="text_box">
+      <div class="text_box mw">
         <div class="title">
           <p>세상의 술자리를 <br /><span>다채롭게</span></p>
         </div>
@@ -96,7 +95,7 @@
       </div>
     </section>
     <section class="sec_market">
-      <div class="sec2">
+      <div class="sec2 mw">
         <button class="btn_market">
           <a href="">마켓 가기 <i class="fa-solid fa-arrow-right"></i></a>
         </button>
@@ -135,7 +134,7 @@
       </div>
     </section>
     <section class="sec_review">
-      <div class="reviewTitle">
+      <div class="reviewTitle mw">
         <h2>담화<span>리뷰</span></h2>
         <p>최근 담화, 함께 볼까요?</p>
       </div>
@@ -202,8 +201,8 @@
             <p>입문용 위스키로 추천, 마실 때와 마신 후 모두 말린 사과향의 여운이 계속 남는다.</p>
           </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next next1"></div>
+        <div class="swiper-button-prev prev1"></div>
       </div>
       <button class="btn_review">
         <a href="">리뷰 더보기 <i class="fa-solid fa-arrow-right"></i></a>
@@ -249,14 +248,28 @@
      
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+   
     <script>
       var swiper = new Swiper(".reviewSwiper", {
-        slidesPerView: 5,
+        slidesPerView: 1,
         spaceBetween: 20,
         navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 50,
+        },
       },
       });
     </script>

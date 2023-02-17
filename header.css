@@ -20,6 +20,9 @@ body {
 /* pc 버전 */
 
 /* header */
+.mw {
+  width: calc(100% - 4rem);
+}
 .hd {
   max-width: var(--mw);
   padding: var(--gap1) 0;
@@ -27,13 +30,14 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.logo {
-  padding-right: var(--gap1);
-}
-.logo i {
+.bar1,
+.glass1 {
   font-size: 2rem;
   color: var(--main_c1);
   display: none;
+}
+.logo {
+  padding-right: var(--gap1);
 }
 .gnb {
   flex-grow: 1;
@@ -256,10 +260,11 @@ body {
 .prd3,
 .prd4 {
   position: relative;
+  background-size: cover;
+  background-position: center;
 }
 .prd1 {
   background-image: url(/img/탁주.jpg);
-  background-size: cover;
 }
 .prd1:before,
 .prd2:before,
@@ -282,15 +287,12 @@ body {
 }
 .prd2 {
   background-image: url(/img/청주.jpg);
-  background-size: cover;
 }
 .prd3 {
   background-image: url(/img/과실주.jpg);
-  background-size: cover;
 }
 .prd4 {
   background-image: url(/img/증류주.jpg);
-  background-size: cover;
 }
 .prd1_text,
 .prd2_text,
@@ -384,6 +386,12 @@ p {
 .swiper-slide span {
   color: var(--sub-c1);
 }
+.next1,
+.prev1 {
+  color: var(--main_c1) !important;
+  border: 1px solid red;
+  position: absolute;
+}
 
 /* footer */
 .footer {
@@ -441,24 +449,39 @@ p {
 }
 /* mobile 버전*/
 @media (max-width: 750px) {
-  .gnb {
-    display: none;
-  }
   .hd {
-    justify-content: center;
+    max-width: var(--mw);
+    padding: var(--gap1) 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
   }
-  .logo {
+  .on {
+    border: 1px solid red;
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%);
+  }
+  .top_logoSet {
     width: 100%;
-    padding: 0 var(--gap1);
     display: flex;
     justify-content: space-between;
     align-items: baseline;
   }
-  .logo i {
+  .logo {
+    padding: 0;
+  }
+  .bar1,
+  .glass1 {
     display: block;
   }
-  .logo i:hover {
+  .bar1:hover,
+  .glass1:hover {
     color: var(--point_c1);
+    cursor: pointer;
   }
 
   .text_box {
@@ -521,6 +544,15 @@ p {
     border: 1px solid var(--main_c1);
     padding: 10px 12px;
     transition: 0.5s;
+  }
+  .reviewSwiper {
+    border: 1px solid black;
+  }
+  .swiper-wrapper {
+    border: 3px solid green;
+  }
+  .swiper-slide {
+    border: 1px solid blue;
   }
   .footer {
     display: block;
