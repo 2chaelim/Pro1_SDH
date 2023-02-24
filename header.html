@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- font-family: 'Noto Sans KR', sans-serif; -->
+    <script src="prj1.js" defer></script>
   </head>
   <body>
     <header class="hd mw">
@@ -31,15 +32,18 @@
           ></i>
       </div>
       <nav class="gnb on">
-        <div class="main_menu">
-          <a href="./header.html">담화소개</a>
-          <a href="./구독page.html">담화구독</a>
-          <a href="#">담화마켓</a>
-        </div>
-        <div class="fun">
-          <a href="#">로그인</a>
-          <a href="#">마이페이지</a>
-          <a href="#">검색<i class="fa-solid fa-magnifying-glass"></i></a>
+        <div class="menu-wrapper">
+          <div class="main_menu">
+            <img src="./img/술담화로고.png" alt="logo">
+            <a href="./header.html">담화소개</a>
+            <a href="./구독page.html">담화구독</a>
+            <a href="#">담화마켓</a>
+          </div>
+          <div class="fun">
+            <a href="#">로그인</a>
+            <a href="#">마이페이지</a>
+            <a href="#">검색<i class="fa-solid fa-magnifying-glass"></i></a>
+          </div>
         </div>
       </nav>
     </header>
@@ -227,7 +231,7 @@
             <p>평일 : 10:00 ~ 18:00, 주말 휴무</p>
           </div>
           <div class="info2">
-            <p>주소 : 서울시 서초구 강남대로 527, 10층(브랜드칸타워, 술담화</p>
+            <p>주소 : 서울시 서초구 강남대로 527, 10층(브랜드칸타워, 술담화)</p>
             <p>이메일 : infor@sooldamhwa.com</p>
           </div>
         </div>
@@ -245,33 +249,6 @@
           </div>
         </div>
       </div>
-     
     </footer>
-
-   
-    <script>
-      var swiper = new Swiper(".reviewSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 40,
-        },
-        1024: {
-          slidesPerView: 5,
-          spaceBetween: 50,
-        },
-      },
-      });
-    </script>
   </body>
 </html>
