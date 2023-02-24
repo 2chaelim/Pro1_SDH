@@ -108,7 +108,7 @@ body {
 .main_banner {
   width: 100%;
   height: 640px;
-  background-image: url("/img/메인배너img.png");
+  background-image: url("../img/메인배너img.png");
   background-position: center;
   background-repeat: no-repeat;
   color: #ffffff;
@@ -173,7 +173,7 @@ body {
   display: none;
 }
 .sec1 {
-  background-image: url(./img/sec1_bg.png);
+  background-image: url(../img/sec1_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: calc(80px + var(--gap1));
@@ -271,7 +271,7 @@ body {
   background-position: center;
 }
 .prd1 {
-  background-image: url(/img/탁주.jpg);
+  background-image: url(../img/탁주.jpg);
 }
 .prd1:before,
 .prd2:before,
@@ -293,13 +293,13 @@ body {
   width: 100%;
 }
 .prd2 {
-  background-image: url(/img/청주.jpg);
+  background-image: url(..//img/청주.jpg);
 }
 .prd3 {
-  background-image: url(/img/과실주.jpg);
+  background-image: url(../img/과실주.jpg);
 }
 .prd4 {
-  background-image: url(/img/증류주.jpg);
+  background-image: url(../img/증류주.jpg);
 }
 .prd1_text,
 .prd2_text,
@@ -427,7 +427,7 @@ p {
   display: block;
   width: 7rem;
   height: 4rem;
-  background-image: url(./img/술담화로고.png);
+  background-image: url(../img/술담화로고.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -576,7 +576,7 @@ p {
   }
   .sec1 {
     height: 1100px;
-    background-image: url(./img/sec1_bg.png);
+    background-image: url(../img/sec1_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -647,7 +647,7 @@ p {
   .logoimg {
     position: absolute;
     width: 80px;
-    background-image: url(./img/술담화로고.png);
+    background-image: url(../img/술담화로고.png);
     background-size: contain;
     background-repeat: no-repeat;
   }
