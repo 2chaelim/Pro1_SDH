@@ -26,3 +26,4 @@ const $ham = document.querySelector(".bar1");
 $ham.addEventListener("click", () => {
   $gnb.classList.toggle("on");
 });
+let texxt = "test";
